@@ -1,6 +1,6 @@
 ## Comments
 My approach for this challenge consists of parsing the dummy data, getting unique restaurants from the list and associated applications.
-I used redux for global state management and parsed the data in the redux actions. I also used redux persist which uses Async Storage to persits the list of viewed responses accross app sessions.
+I used redux for global state management and parsed the data in the redux actions. I also used redux persist which uses Async Storage to persits the list of viewed responses across app sessions.
 
 # Code challenge
 
