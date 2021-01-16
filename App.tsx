@@ -1,17 +1,21 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
-import Header from './components/Header';
-import Welcome from './components/Welcome';
-import Page from './components/Page';
+import {PersistGate} from 'redux-persist/integration/react';
+import {Provider} from 'react-redux';
+import {store, persistor} from './src/_store/store';
+import {NavigationContainer} from '@react-navigation/native';
+import {createRootNavigator} from './src/router';
 
 const App: () => JSX.Element = () => {
+  const Layout = createRootNavigator();
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <Page>
-        <Header />
-        <Welcome />
-      </Page>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <NavigationContainer>
+            <Layout />
+          </NavigationContainer>
+        </PersistGate>
+      </Provider>
     </>
   );
 };
